@@ -1,73 +1,218 @@
-# Welcome to your Lovable project
+# 🔬 LabMate Gen - Automated Laboratory Record Generator
 
-## Project info
 
-**URL**: https://lovable.dev/projects/85d0cb51-87fc-4e6a-9c27-4b006a2dc960
 
-## How can I edit this code?
+## 🎯 Overview
 
-There are several ways of editing your application.
+**LabMate Gen** is a full-stack web application designed to help students and professionals create standardized laboratory records effortlessly. Say goodbye to manual formatting and hello to automated, professional documentation.
 
-**Use Lovable**
+### The Problem
+Students spend hours formatting lab records, often resulting in inconsistent documentation and formatting errors. Submitting assignments becomes tedious when dealing with multiple records.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/85d0cb51-87fc-4e6a-9c27-4b006a2dc960) and start prompting.
+### The Solution
+LabMate Gen automates the entire process - from creation to export. Fill in your experiment details once, and generate perfectly formatted Word and PDF documents instantly.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## ✨ Features
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 🔐 **User Management**
+- Secure user registration and authentication
+- JWT-based session management
+- Password encryption with bcrypt
+- Personal user profiles
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 📝 **Lab Record Creation**
+- Intuitive form interface with all standard fields
+- Auto-populate student details from profile
+- Rich text editing for theory and conclusions
+- Code syntax highlighting
+- Real-time preview before saving
 
-Follow these steps:
+### 💾 **Data Management**
+- Save unlimited lab records to cloud database
+- View all records in organized dashboard
+- Edit existing records anytime
+- Delete records with confirmation
+- Search and filter capabilities
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### 📄 **Document Export**
+- **Word Export** (.doc) - Editable documents
+- **PDF Export** - Professional print-ready format
+- **Formatted Templates** - Industry-standard layouts
+- **Instant Download** - One-click export
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 🎨 **User Experience**
+- Clean, modern interface with Tailwind CSS
+- Fully responsive design (mobile, tablet, desktop)
+- Dark mode code editor
+- Loading states and error handling
+- Toast notifications for actions
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+
+## 🚀 Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/varshith900/labmate-gen.git
+cd labmate-gen
+```
+
+### 2. Backend Setup
+
+```bash
+# Navigate to backend directory
+cd backend
+
+# Install dependencies
+npm install
+
+# Create uploads folder for images
+mkdir uploads
+
+# Create .env file (see Configuration section)
+touch .env
+```
+
+### 3. Frontend Setup
+
+```bash
+# Navigate to frontend directory
+cd ../frontend
+
+# Install dependencies
+npm install
+
+# Create .env file
+touch .env
+```
+
+---
+
+## ⚙️ Configuration
+
+### Backend Environment Variables
+
+Create a `.env` file in the `backend` directory:
+
+```env
+# MongoDB Connection
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/labmate?retryWrites=true&w=majority
+
+# JWT Secret (Use a strong random string)
+JWT_SECRET=your_super_secret_jwt_key_here
+
+# Server Configuration
+PORT=5000
+NODE_ENV=development
+
+# Frontend URL (for CORS)
+FRONTEND_URL=http://localhost:3000
+```
+
+**Generate a secure JWT_SECRET:**
+```bash
+node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
+```
+
+### Frontend Environment Variables
+
+Create a `.env` file in the `frontend` directory:
+
+```env
+# Backend API URL
+REACT_APP_API_URL=http://localhost:5000/api
+```
+
+### MongoDB Atlas Setup
+
+1. Create account at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register)
+2. Create a new cluster (free tier M0)
+3. Create a database user
+4. Whitelist your IP (or 0.0.0.0/0 for development)
+5. Get connection string and update `MONGODB_URI`
+
+---
+
+## 💻 Usage
+
+### Development Mode
+
+#### Start Backend Server
+
+```bash
+# From backend directory
+cd backend
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Server runs on `http://localhost:5000`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+#### Start Frontend Application
 
-**Use GitHub Codespaces**
+```bash
+# From frontend directory (in new terminal)
+cd frontend
+npm start
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Application opens at `http://localhost:3000`
 
-## What technologies are used for this project?
+### Production Build
 
-This project is built with:
+#### Backend
+```bash
+cd backend
+npm start
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+#### Frontend
+```bash
+cd frontend
+npm run build
+# Serve the build folder with a static server
+```
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/85d0cb51-87fc-4e6a-9c27-4b006a2dc960) and click on Share -> Publish.
+## 📱 Using LabMate Gen
 
-## Can I connect a custom domain to my Lovable project?
+### Getting Started
 
-Yes, you can!
+1. **Register Account**
+   - Click "Register" tab
+   - Fill in: Name, Email, Password, Roll Number, Department
+   - Click "Register" button
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+2. **Login**
+   - Enter your email and password
+   - Click "Login"
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+3. **Create Lab Record**
+   - Click "Create Record" tab
+   - Fill in experiment details:
+     - Student info (auto-filled from profile)
+     - Experiment number, subject, date
+     - Aim, tools, theory, code, output, conclusion
+   - Click "Preview" to see formatted output
+
+4. **Save Record**
+   - Review your record in preview
+   - Click "Save" to store in database
+   - Record appears in "My Records" tab
+
+5. **Export Documents**
+   - Click "Word" to download .doc file
+   - Click "PDF" to print/save as PDF
+   - Files are named automatically
+
+6. **Manage Records**
+   - View all records in "My Records" tab
+   - Click "Edit" to modify a record
+   - Click "Delete" to remove (with confirmation)
+
+---
+
