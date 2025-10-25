@@ -21,9 +21,11 @@ interface Props {
 
 export default function RecordPreview({ formData }: Props) {
   return (
-    <Card className="shadow-elegant">
-      <CardHeader className="text-center border-b">
-        <CardTitle className="text-2xl">Laboratory Record</CardTitle>
+    <Card className="shadow-glow border-primary/10 gradient-card">
+      <CardHeader className="text-center border-b border-primary/20">
+        <CardTitle className="text-2xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          Laboratory Record
+        </CardTitle>
       </CardHeader>
       <CardContent className="p-6 space-y-6">
         <div className="grid grid-cols-2 gap-4 p-4 bg-secondary rounded-lg">

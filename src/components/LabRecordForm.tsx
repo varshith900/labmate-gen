@@ -163,9 +163,11 @@ export default function LabRecordForm({ profile, editingRecord, onSaveComplete, 
   return (
     <div className="grid lg:grid-cols-2 gap-6">
       <div className="space-y-6">
-        <Card className="shadow-elegant">
+        <Card className="shadow-glow border-primary/10 gradient-card">
           <CardHeader>
-            <CardTitle>Student Details</CardTitle>
+            <CardTitle className="flex items-center gap-2">
+              <span className="text-primary">📋</span> Student Details
+            </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid sm:grid-cols-2 gap-4">
@@ -232,9 +234,11 @@ export default function LabRecordForm({ profile, editingRecord, onSaveComplete, 
           </CardContent>
         </Card>
 
-        <Card className="shadow-elegant">
+        <Card className="shadow-glow border-primary/10 gradient-card">
           <CardHeader>
-            <CardTitle>Experiment Details</CardTitle>
+            <CardTitle className="flex items-center gap-2">
+              <span className="text-primary">🔬</span> Experiment Details
+            </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
@@ -296,7 +300,7 @@ export default function LabRecordForm({ profile, editingRecord, onSaveComplete, 
           </CardContent>
         </Card>
 
-        <Card className="shadow-elegant">
+        <Card className="shadow-glow border-primary/10 gradient-card">
           <CardContent className="pt-6">
             <div className="flex flex-wrap gap-3">
               <Button onClick={() => setShowPreview(!showPreview)} variant="outline" className="flex-1">

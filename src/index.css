@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 214 100% 97%;
+    --background: 214 100% 98%;
     --foreground: 217 33% 17%;
 
     --card: 0 0% 100%;
@@ -21,14 +21,14 @@ All colors MUST be HSL.
     --primary-foreground: 0 0% 100%;
     --primary-hover: 217 91% 50%;
 
-    --secondary: 214 32% 91%;
+    --secondary: 214 100% 95%;
     --secondary-foreground: 217 33% 17%;
 
     --muted: 214 32% 91%;
     --muted-foreground: 217 20% 51%;
 
-    --accent: 210 40% 96%;
-    --accent-foreground: 217 33% 17%;
+    --accent: 271 81% 56%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -36,21 +36,23 @@ All colors MUST be HSL.
     --success: 142 71% 45%;
     --success-foreground: 0 0% 100%;
 
-    --warning: 271 81% 56%;
+    --warning: 38 92% 50%;
     --warning-foreground: 0 0% 100%;
 
-    --border: 214 32% 88%;
-    --input: 214 32% 88%;
+    --border: 214 32% 90%;
+    --input: 214 32% 90%;
     --ring: 217 91% 60%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(210 100% 70%));
-    --gradient-subtle: linear-gradient(180deg, hsl(214 100% 97%), hsl(210 100% 95%));
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(271 81% 56%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(214 100% 98%) 0%, hsl(210 100% 96%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(214 100% 99%) 100%);
     
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 25px -5px rgb(0 0 0 / 0.1);
+    --shadow-glow: 0 0 20px hsl(217 91% 60% / 0.15);
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -84,8 +86,8 @@ All colors MUST be HSL.
     --muted: 217 33% 20%;
     --muted-foreground: 217 20% 65%;
 
-    --accent: 217 33% 20%;
-    --accent-foreground: 214 100% 97%;
+    --accent: 271 81% 56%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
@@ -93,15 +95,17 @@ All colors MUST be HSL.
     --success: 142 71% 45%;
     --success-foreground: 0 0% 100%;
 
-    --warning: 271 81% 56%;
+    --warning: 38 92% 50%;
     --warning-foreground: 0 0% 100%;
 
     --border: 217 33% 25%;
     --input: 217 33% 25%;
     --ring: 217 91% 60%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(210 100% 70%));
-    --gradient-subtle: linear-gradient(180deg, hsl(217 33% 10%), hsl(217 33% 15%));
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(271 81% 56%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(217 33% 10%) 0%, hsl(217 33% 15%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(217 33% 15%) 0%, hsl(217 33% 18%) 100%);
+    --shadow-glow: 0 0 20px hsl(217 91% 60% / 0.3);
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -134,8 +138,16 @@ All colors MUST be HSL.
     background: var(--gradient-subtle);
   }
 
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
   .shadow-elegant {
     box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
   }
 
   .transition-smooth {
@@ -144,5 +156,13 @@ All colors MUST be HSL.
 
   .code-block {
     @apply bg-slate-900 text-slate-100 p-4 rounded-lg font-mono text-sm overflow-x-auto;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-glow hover:-translate-y-1;
+  }
+
+  .btn-gradient {
+    @apply gradient-primary text-primary-foreground hover:opacity-90 transition-smooth;
   }
 }

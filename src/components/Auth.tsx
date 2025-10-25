@@ -62,15 +62,15 @@ export default function Auth() {
 
   return (
     <div className="min-h-screen flex items-center justify-center gradient-subtle p-4">
-      <Card className="w-full max-w-md shadow-elegant">
-        <CardHeader className="text-center">
+      <Card className="w-full max-w-md shadow-glow border-2 border-primary/10 animate-fade-in">
+        <CardHeader className="text-center pb-6">
           <div className="flex justify-center mb-4">
-            <div className="p-3 bg-primary rounded-full">
-              <BookOpen className="w-8 h-8 text-primary-foreground" />
+            <div className="p-4 gradient-primary rounded-2xl shadow-glow animate-scale-in">
+              <BookOpen className="w-10 h-10 text-primary-foreground" />
             </div>
           </div>
-          <CardTitle className="text-2xl font-bold">Lab Record Generator</CardTitle>
-          <CardDescription>Create and manage your laboratory records</CardDescription>
+          <CardTitle className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Lab Mate</CardTitle>
+          <CardDescription className="text-base">Your Smart Laboratory Record Companion</CardDescription>
         </CardHeader>
         <CardContent>
           <Tabs defaultValue="login" className="w-full">

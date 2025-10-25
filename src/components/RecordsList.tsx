@@ -49,7 +49,7 @@ export default function RecordsList({ records, onEdit, onDelete }: Props) {
   return (
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {records.map((record) => (
-        <Card key={record.id} className="shadow-elegant hover:shadow-xl transition-smooth">
+        <Card key={record.id} className="shadow-elegant card-hover border-primary/10">
           <CardHeader className="pb-3">
             <div className="flex items-start justify-between">
               <div className="flex-1">

@@ -104,16 +104,16 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen gradient-subtle">
-      <header className="bg-card shadow-sm border-b border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <header className="bg-card shadow-glow border-b border-primary/10 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-primary rounded-lg">
-                <BookOpen className="w-6 h-6 text-primary-foreground" />
+              <div className="p-2.5 gradient-primary rounded-xl shadow-glow animate-pulse">
+                <BookOpen className="w-7 h-7 text-primary-foreground" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-foreground">Lab Record Generator</h1>
-                {profile && <p className="text-sm text-muted-foreground">Welcome, {profile.name}</p>}
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Lab Mate</h1>
+                {profile && <p className="text-sm text-muted-foreground">Welcome back, {profile.name}! 👋</p>}
               </div>
             </div>
             <Button variant="outline" onClick={handleLogout}>
